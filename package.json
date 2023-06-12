@@ -1,0 +1,39 @@
+{
+  "name": "rhymes-with",
+  "version": "0.0.0",
+  "description": "Determine if two words rhyme",
+  "license": "CC0-1.0",
+  "repository": "muhashi/rhymes-with",
+  "author": {
+    "name": "muhashi",
+    "email": "muhamedoes+muhashi@gmail.com",
+    "url": "https://muhashi.com"
+  },
+  "type": "module",
+  "exports": "./index.js",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "rhymes",
+    "rhyme",
+    "rhyming",
+    "dictionary",
+    "words",
+    "english",
+    "language",
+    "phonetics"
+  ],
+  "dependencies": {
+    "cmu-pronouncing-dictionary": "^3.0.0"
+  },
+  "devDependencies": {
+    "ava": "^5.3.0"
+  }
+}
