@@ -1,6 +1,6 @@
 {
   "name": "rhymes-with",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Determine if two words rhyme",
   "license": "CC0-1.0",
   "repository": "muhashi/rhymes-with",
