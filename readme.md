@@ -23,14 +23,17 @@ rhymesWith('cat', 'hat');
 rhymesWith('bonnie', 'irani');
 //=> true
 
-rhymesWith('aigner', 'ama');
+rhymesWith('resume', 'ricochet');
 //=> false
 
-rhymesWith('aigner', 'ama', {allPronounciations: true});
+rhymesWith('resume', 'ricochet', { allPronounciations: true });
 //=> true
 
 // words not in dictionary
 rhymesWith('pooper', 'scooper');
+//=> false
+
+rhymesWith('I need to use the bathroom..', 'We met in a chatroom');
 //=> false
 ```
 

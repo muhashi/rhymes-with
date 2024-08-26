@@ -31,9 +31,9 @@
     "phonetics"
   ],
   "dependencies": {
-    "cmu-pronouncing-dictionary": "^3.0.0"
+    "rhyming-part": "^2.1.0"
   },
   "devDependencies": {
-    "ava": "^6.0.1"
+    "ava": "^6.1.3"
   }
 }

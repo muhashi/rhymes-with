@@ -1,36 +1,5 @@
-import { dictionary } from 'cmu-pronouncing-dictionary';
+import getRhymingPart from 'rhyming-part';
 
-function getRhymingPart(pronounciation) {
-	const stresses = pronounciation.split(' ');
-	for (let i = stresses.length - 1; i >= 0; i--) {
-		if (stresses[i].includes('1') || stresses[i].includes('2')) {
-			return stresses.slice(i).join(' ');
-		}
-	}
-
-  return '';
-}
-
-function getRhymingParts(word) {
-  const pronounciation = dictionary[word] || '';
-  if (pronounciation === '') {
-    return [];
-  }
-
-  const rhymingParts = [getRhymingPart(pronounciation)];
-
-  for (let i = 0; i < 5; i++) {
-    const wordKey = `${word}(${i})`;
-    const pronounciation = dictionary[wordKey] || '';
-    if (pronounciation === '') {
-      continue;
-    }
-
-    rhymingParts.push(getRhymingPart(pronounciation));
-  }
-
-  return rhymingParts;
-}
 
 export default function rhymesWith(wordA, wordB, {allPronounciations = false} = {}) {
   if (typeof wordA !== 'string') {
@@ -39,8 +8,8 @@ export default function rhymesWith(wordA, wordB, {allPronounciations = false} = 
     throw new TypeError(`Expected a string, got ${typeof wordB}`);
   }
 
-  const rhymingPartsA = getRhymingParts(wordA.trim().toLowerCase());
-  const rhymingPartsB = getRhymingParts(wordB.trim().toLowerCase());
+  const rhymingPartsA = getRhymingPart(wordA.trim().toLowerCase(), { multiple: true }) ?? [];
+  const rhymingPartsB = getRhymingPart(wordB.trim().toLowerCase(), { multiple: true }) ?? [];
 
   if (rhymingPartsA.length === 0 || rhymingPartsB.length === 0) {
     return false;
